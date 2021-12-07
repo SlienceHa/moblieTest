@@ -2,7 +2,7 @@ import React, { CSSProperties } from 'react';
 import './App.css';
 import  img from './code.png' 
 
-
+const name = decodeURIComponent(window.location.href.split('?')[1].split('=')[1]);
 function App() {
     const [time,setTime] = React.useState<string[]>([]);
     React.useEffect(()=>{
@@ -31,7 +31,7 @@ function App() {
                 {time[1]}
             </div>
             <div  style={topTitle}>
-                    <p style={{fontSize:'1.0rem',margin:'0',fontFamily:'Microsoft YaHei',fontWeight:'450'}}>{'姓名：' + '尚海涵'}</p>
+                    <p style={{fontSize:'1.0rem',margin:'0',fontFamily:'Microsoft YaHei',fontWeight:'450'}}>{'姓名：' + name}</p>
                     <p style={{fontSize:'13px',margin:'0'}}>单位：信息管理与人工智能学院</p>
             </div>
             <div style={{position:'absolute',right:'0',top:'7.7rem',cursor:'pointer'}}>
@@ -93,10 +93,9 @@ const nowTimeBig:React.CSSProperties ={
     width:'90%',
     margin:'0 auto',
     textAlign:'center',
-    lineHeight:'24px',
     fontSize:'3rem',
     fontWeight:'bold',
-    marginTop:'2rem',
+    marginTop:'0.2rem',
     color: '#424242'
  }
 
