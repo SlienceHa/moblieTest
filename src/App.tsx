@@ -2,7 +2,7 @@ import React, { CSSProperties } from 'react';
 import './App.css';
 import  img from './code.png' 
 
-const name = decodeURIComponent(window.location.href.split('?')[1].split('=')[1]);
+const name = decodeURIComponent(window.location.href?.split('?')[1]?.split('=')[1]) || '尚海涵';
 function App() {
     const [time,setTime] = React.useState<string[]>([]);
     React.useEffect(()=>{
